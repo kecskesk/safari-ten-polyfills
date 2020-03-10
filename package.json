@@ -1,4 +1,21 @@
 {
-  "name": "@kecskesk/safari-ten-polyfills",
-  "version": "1.0.2"
+  "name": "safari-ten-polyfills",
+  "version": "1.0.0",
+  "description": "Polyfills extension for Safari 10 missing Object functions",
+  "main": "safari-ten-polyfills.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kecskesk/safari-ten-polyfills.git"
+  },
+  "keywords": [
+    "object",
+    "polyfill",
+    "safari"
+  ],
+  "author": "k3csk3s@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kecskesk/safari-ten-polyfills/issues"
+  },
+  "homepage": "https://github.com/kecskesk/safari-ten-polyfills#readme"
 }
