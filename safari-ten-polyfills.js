@@ -6,7 +6,7 @@ const keys = Reflect.ownKeys;
 if (!Object.keys) {
     Object.keys = (function() {
         'use strict';
-        const hasOwnProperty = Object.prototype.hasOwnProperty,
+        var hasOwnProperty = Object.prototype.hasOwnProperty,
             hasDontEnumBug = !({ toString: null }).propertyIsEnumerable('toString'),
             dontEnums = [
                 'toString',
@@ -24,8 +24,8 @@ if (!Object.keys) {
                 throw new TypeError('Object.keys called on non-object');
             }
 
-            const result = [];
-            let prop, i;
+            var result = [];
+            var prop, i;
 
             for (prop in obj) {
                 if (hasOwnProperty.call(obj, prop)) {
@@ -47,13 +47,17 @@ if (!Object.keys) {
 
 if (!Object['values']) {
     Object['values'] = function values(O) {
-        return reduce(keys(O), (v, k) => concat(v, typeof k === 'string' && isEnumerable(O, k) ? [O[k]] : []), []);
+        return reduce(keys(O), function(v, k) {
+        	concat(v, typeof k === 'string' && isEnumerable(O, k) ? [O[k]] : [])
+        }, []);
     };
 }
 
 
 if (!Object['entries']) {
     Object['entries'] = function entries(O) {
-        return reduce(keys(O), (e, k) => concat(e, typeof k === 'string' && isEnumerable(O, k) ? [[k, O[k]]] : []), []);
+        return reduce(keys(O), function(e, k) {
+        	concat(e, typeof k === 'string' && isEnumerable(O, k) ? [[k, O[k]]] : [])
+        }, []);
     };
 }

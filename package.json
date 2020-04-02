@@ -1,6 +1,6 @@
 {
   "name": "safari-ten-polyfills",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Polyfills extension for Safari 10 missing Object functions",
   "main": "safari-ten-polyfills.js",
   "repository": {
